@@ -3,24 +3,15 @@ import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import fs from 'fs'
 import dotenv from 'dotenv'
-import path from 'path'
-import { fileURLToPath } from 'url'
 
 dotenv.config()
 
 const router = express.Router()
 const SECRET_KEY = process.env.PRIVATE_KEY
 
-// Get __dirname equivalent
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-// Safe path to your users.json
-const usersPath = path.join(__dirname, '../server/data/users.json')
-
 router.post('/login', (req, res) => {
   const { username, password } = req.body
-  const users = JSON.parse(fs.readFileSync(usersPath))
+  const users = JSON.parse(fs.readFileSync('../server/data/users.json'))
 
   const user = users.find(u => u.username === username)
   if (!user) {
