@@ -16,6 +16,10 @@ const PORT = 3000
 app.use('/', LoginRouter)
 app.use('/', BalanceRouter)
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`)
-})
+// app.listen(PORT, () => {
+//   console.log(`Server running on http://localhost:${PORT}`)
+// })
+
+export default function handler(req, res) {
+  return app(req, res)
+}
