@@ -1,0 +1,32 @@
+[
+  {
+    "username": "alice",
+    "password": "$2b$10$fNLtXOblDjsFAZYCKLeKCeDMtXajdTFR4icz9ounkpBeRosuyTFy2",
+    "balance": 704140
+  },
+  {
+    "username": "bob",
+    "password": "$2b$10$fZA8CxRIAXU4pxI9VszTfesOeIo4f2NvemCm6dMyoMucz/XaxDfBG",
+    "balance": 244030
+  },
+  {
+    "username": "charlie",
+    "password": "$2b$10$cYYBICCp1N/6o5ltrofV7etZgrZsr18eSaiuEaSIJCSRJ5870tWJm",
+    "balance": 234030
+  },
+  {
+    "username": "dalton",
+    "password": "$2b$10$tyeVEnGxuX5QWm2k9iaiteLrVNsSzbEwwrt3l1kTzrrtjeVwfZEYe",
+    "balance": 701845
+  },
+  {
+    "username": "e",
+    "password": "$2b$10$25mudEmGWJycTc9l9nPV5OaAmfM35//RZHSCAtJCB.ymQPZiwRcku",
+    "balance": 633346
+  },
+  {
+    "username": "fred",
+    "password": "$2b$10$6ho0OCIA2Uoy.CMIoM5EWOHMK/VdlWJMSjVpIxnyfETx3lMR9xgtC",
+    "balance": 637845
+  }
+]
