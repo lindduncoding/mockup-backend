@@ -1,17 +1,20 @@
 import express from 'express'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-import fs from 'fs'
 import dotenv from 'dotenv'
+import * as DB from '../data/mongodbController.js'
 
 dotenv.config()
 
 const router = express.Router()
 const SECRET_KEY = process.env.PRIVATE_KEY
 
-router.post('/login', (req, res) => {
+// Create a handle to our database
+const DBHandle = DB.getDBHandle('veristable')
+
+router.post('/login', async (req, res) => {
   const { username, password } = req.body
-  const users = JSON.parse(fs.readFileSync('../server/data/users.json'))
+  const users = await DB.getUser(DBHandle, username)
 
   const user = users.find(u => u.username === username)
   if (!user) {
