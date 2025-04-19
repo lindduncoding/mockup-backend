@@ -14,9 +14,8 @@ const DBHandle = DB.getDBHandle('veristable')
 
 router.post('/login', async (req, res) => {
   const { username, password } = req.body
-  const users = await DB.getUser(DBHandle, username)
+  const user = await DB.getUser(DBHandle, username)
 
-  const user = users.find(u => u.username === username)
   if (!user) {
     return res.status(401).json({ message: 'User not found' })
   }
