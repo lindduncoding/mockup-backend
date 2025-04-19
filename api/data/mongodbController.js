@@ -24,9 +24,10 @@ export function getDBHandle (dbName) {
 }
 
 export async function getUser (DBHandle, username) {
-    const usersCollection = DBHandle.collection('users')
-    const user = await usersCollection.findOne({ username })
-    return user
+  await client.connect()
+  const usersCollection = DBHandle.collection('users')
+  const user = await usersCollection.findOne({ username })
+  return user
 }
 
 async function run() {
