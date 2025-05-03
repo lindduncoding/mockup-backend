@@ -1,12 +1,13 @@
 import express from 'express'
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
+import cors from 'cors'
 
 dotenv.config()
 
 const router = express.Router()
 const SECRET_KEY = process.env.PRIVATE_KEY
-
+router.use(cors())
 function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization']
   const token = authHeader && authHeader.split(' ')[1]
