@@ -3,14 +3,12 @@ import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 import * as DB from '../data/mongodbController.js'
-import cors from 'cors'
 
 dotenv.config()
 
 const router = express.Router()
 const SECRET_KEY = process.env.PRIVATE_KEY
-// Enable CORS
-router.use(cors())
+
 // Create a handle to our database
 const DBHandle = DB.getDBHandle('veristable')
 
