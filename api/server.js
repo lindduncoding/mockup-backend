@@ -9,7 +9,7 @@ const app = express()
 app.use(bodyParser.json())
 
 app.use(cors({
-  origin: 'https://veristable-render-cool-frog-1562.fly.dev/', 'http://localhost:3000',  
+  origin: ['https://veristable-render-cool-frog-1562.fly.dev/', 'http://localhost:3000'],  
   credentials: true,                
   allowedHeaders: ['Content-Type', 'Authorization'], 
   methods: ['GET', 'POST', 'OPTIONS']
